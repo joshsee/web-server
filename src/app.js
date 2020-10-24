@@ -53,6 +53,22 @@ app.get('/weather', (req, res)=>{
     })
 })
 
+app.get('/help/*', (req, res)=>{
+    res.render('404',{
+        title: '404', 
+        errorMessage: 'Help Article not found',
+        name: 'Josh'
+    })
+})
+
+app.get('*', (req, res)=>{
+    res.render('404',{
+        title: '404', 
+        errorMessage: 'My 404 page',
+        name: 'Josh'
+    })
+})
+
 app.listen(3000, () => {
     console.log('Server is up on port 3000')
 })
